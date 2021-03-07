@@ -1,0 +1,35 @@
+#mainContainer{
+    position: absolute;
+    top:200;
+    left:300;
+}
+#scatterPlotInput{
+    display: none;
+    position: absolute;
+    top:150;
+    left:1200;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(13, 13, 129);
+}
+
+li {
+    display: inline-block;
+}
+li a:hover {
+    text-decoration: none;
+    background-color: rgb(57, 57, 226);
+    color:white;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color:rgb(13, 13, 129);
+}
+

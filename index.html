@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>FIFA'19 Player's Visualization</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <link rel="stylesheet" href="fifa.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="barchart.js"></script>
+        <script src="scatterplot.js"></script>
+        <script src="histogram.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div>
+            <img src="FIFA_19.jpg" height="100" width="100" />
+            <h1 style="text-align: center;position: absolute;left: 100; top: 30;">FIFA'19 Player's Accuracies</h1>
+        </div>
+        <div id="scatterPlotInput">
+            <ul style="background-color: white;">
+                <li><label for="val1">Scatter Plot Input:</label></li>
+                <li>
+                    <select class="form-control" id="val1">
+                        <option value="headingAccuracy" selected>Heading</option>
+                        <option value="shortPassing">Short Passing</option>
+                        <option value="age">Age</option>
+                        <option value="preferredFoot">Preferred Foot</option>
+                        <option value="intReputation">Reputation</option>
+                        <option value="workRate">Work Rate</option>
+                        <option value="weakFoot">Weak Foot</option>
+                        <option value="skillMove">Skill Move</option>
+                        <option value="height">Height</option>
+                        <option value="weight">weight</option>
+                        <option value="dribbling">Dribbling</option>
+                        <option value="sprintSpeed">Sprint Speed</option>
+                        <option value="jumping">Jumping</option>
+                        <option value="vision">Vision</option>
+                        <option value="finishing">Finishing</option>
+                    </select>
+                </li>
+            </ul>
+            <ul style="background-color: white;">
+                <li>
+                    <input checked class="form-check-input" type="radio" name="axisRadio" id="xaxisRadio" value="axisx">
+                    <label class="form-check-label" for="xaxisRadio">
+                        X-axis
+                    </label>
+                    <input class="form-check-input" type="radio" name="axisRadio" id="yaxisRadio" value="axisy">
+                    <label class="form-check-label" for="yaxisRadio">
+                        Y-axis
+                    </label>
+                </li>
+                <li><button type="button" class="btn btn-primary" onclick="drawScatterPlot()">Draw Scatter Plot</button></li>
+            </ul>
+            
+        </div>
+        <ul>
+            <li><a id="age" href="#" onclick="visualizeByHistogram('age','Age (yrs.)')">Age</a></li>
+            <li><a id="headingAccuracy" href="#" onclick="visualizeByHistogram('headingAccuracy','Heading (rating)')">Heading</a></li>
+            <li><a id="shortPassing" href="#" onclick="visualizeByHistogram('shortPassing','Short Passing (rating)')">Short Passing</a></li>
+            <li><a id="preferredFoot" href="#" onclick="visualizeByBarchart('preferredFoot','Preferred Foot')">Preferred Foot</a></li>
+            <li><a id="intReputation" href="#" onclick="visualizeByBarchart('intReputation','Int Reputation (1 being the lowest)')">Reputation</a></li>
+            <li><a id="workRate" href="#" onclick="visualizeByBarchart('workRate','Work Rate')">Work Rate</a></li>
+            <li><a id="weakFoot" href="#" onclick="visualizeByBarchart('weakFoot','Weak Foot (1 being the weakest)')">Weak Foot</a></li>
+            <li><a id="skillMove" href="#" onclick="visualizeByBarchart('skillMove','Skill Move (1 being the lowest)')">Skill Move</a></li>
+            <li><a id="height" href="#" onclick="visualizeByHistogram('height','Height (ft)')">Height</a></li>
+            <li><a id="weight" href="#" onclick="visualizeByHistogram('weight','Weight (lbs)')">Weight</a></li>
+            <li><a id="dribbling" href="#" onclick="visualizeByHistogram('dribbling','Dribbling (rating)')">Dribbling</a></li>
+            <li><a id="sprintSpeed" href="#" onclick="visualizeByHistogram('sprintSpeed','Sprint Speed (rating)')">Sprint Speed</a></li>
+            <li><a id="jumping" href="#" onclick="visualizeByHistogram('jumping','Jumping (rating)')">Jumping</a></li>
+            <li><a id="vision" href="#" onclick="visualizeByHistogram('vision','Vision (rating)')">Vision</a></li>
+            <li><a id="finishing" href="#" onclick="visualizeByHistogram('finishing','Finishing (rating)')">Finishing</a></li>
+            <li><a id="scatterPlot" href="#" onclick="showInputBox()">Scatter Plot</a></li>
+        </ul>
+        <div id="mainContainer" class="mainContainer" >
+        </div>
+        <div id="selectedChart" style="display: none;"></div>
+        <div id="selectedChartXLabel" style="display: none;"></div>
+    </body>
+</html>
